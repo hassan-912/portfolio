@@ -18,7 +18,7 @@ export default function About() {
           </h1>
 
           <div className="grid gap-8">
-            <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-lg shadow-md p-6 hover:shadow-lg transition-all duration-300 hover:scale-[1.02] relative overflow-hidden group border border-gray-200 dark:border-gray-700">
+            <div className="bg-white/80 dark:bg-gray-800/80  rounded-lg shadow-md p-6 hover:shadow-lg transition-all duration-300 hover:scale-[1.02] relative overflow-hidden group border border-gray-200 dark:border-gray-700">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 dark:from-blue-500/5 dark:via-purple-500/5 dark:to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               
               <div className="flex flex-col md:flex-row items-center gap-6">
@@ -27,7 +27,7 @@ export default function About() {
                     src="/pfp.jpg"
                     alt="Hassan Azb"
                     fill
-                    className="w-full h-fill object-cover scale-210"
+                    className="w-full h-50 object-cover scale-215"
                     priority
                   />
                 </div>
@@ -96,7 +96,7 @@ export default function About() {
               </div>
             </div>
 
-            <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-lg shadow-md p-6 hover:shadow-lg transition-all duration-300 hover:scale-[1.02] relative overflow-hidden group border border-gray-200 dark:border-gray-700">
+            <div className="bg-white/80 dark:bg-gray-800/80  rounded-lg shadow-md p-6 hover:shadow-lg transition-all duration-300 hover:scale-[1.02] relative overflow-hidden group border border-gray-200 dark:border-gray-700">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 dark:from-blue-500/5 dark:via-purple-500/5 dark:to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               
               <h3 className="text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 transition-colors duration-300">
