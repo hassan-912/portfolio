@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { FaSun, FaMoon } from 'react-icons/fa'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -71,7 +72,7 @@ const Navbar = () => {
               className="p-2 rounded-md text-white hover:bg-white/10 transition-colors"
               aria-label="Toggle dark mode"
             >
-              {darkMode ? '🌞' : '🌙'}
+              {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
             </button>
           </div>
 
@@ -110,6 +111,7 @@ const Navbar = () => {
               onClick={toggleDarkMode}
               className="w-full text-left px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white/10 transition-colors"
             >
+              {darkMode ? <FaSun size={20} className="inline mr-2" /> : <FaMoon size={20} className="inline mr-2" />}
               {darkMode ? 'Light Mode' : 'Dark Mode'}
             </button>
           </div>

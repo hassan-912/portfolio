@@ -2,20 +2,20 @@ import Navbar from '../components/Navbar'
 
 const experiences = [
   {
+    type: 'Internship',
+    title: 'AI/Data Science Intern',
+    organization: 'Microsoft',
+    location: 'Hybrid',
+    period: '2025 (Round 3)',
+    description: 'Selected for Microsoft\'s prestigious AI/Data Science path internship program. Working on cutting-edge machine learning projects using Azure ML, developing generative AI solutions, and analyzing large datasets to extract actionable insights. Collaborating with cross-functional teams to implement AI models that solve real-world business problems. Gaining hands-on experience with Microsoft\'s AI tools and frameworks while receiving mentorship from industry experts.'
+  },
+  {
     type: 'Volunteering',
     title: 'Public Relations Trainee',
     organization: 'Ministry of Youth and Sports',
     location: 'Cairo, Egypt',
     period: 'Mar 2024 – Present',
     description: 'Working in the public relations department, handling communications and outreach initiatives.'
-  },
-  {
-    type: 'Volunteering',
-    title: 'PR Member',
-    organization: 'Youth Leading Youth (YLY)',
-    location: 'Egypt',
-    period: 'Present',
-    description: 'Contributing to youth development initiatives and community engagement programs.'
   },
   {
     type: 'Volunteering',
@@ -74,4 +74,4 @@ export default function Experience() {
       </div>
     </main>
   )
-} 
+}

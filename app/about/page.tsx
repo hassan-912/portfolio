@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function About() {
   const skills = [
-    'Python', 'JavaScript', 'TypeScript', 'React', 'Next.js',
+    'Python', 'JavaScript', 'TypeScript', 
     'Node.js', 'AI/ML', 'Automation', 'Web Development',
     'Problem Solving', 'Team Leadership'
   ]
@@ -27,7 +27,7 @@ export default function About() {
                     src="/pfp.jpg"
                     alt="Hassan Azb"
                     fill
-                    className="w-full h-50 object-cover scale-215"
+                    className="w-full h-full object-fit scale-200"
                     priority
                   />
                 </div>
@@ -48,7 +48,7 @@ export default function About() {
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300 transition-colors duration-300">
                     I am a passionate Computer Science student at The Egyptian E-Learning University (EELU), 
-                    currently in my second year. My journey in technology began with a deep fascination for 
+                    currently in my third year. My journey in technology began with a deep fascination for 
                     how software can solve real-world problems and create meaningful impact.
                   </p>
                 </div>
@@ -60,7 +60,7 @@ export default function About() {
                   <p className="text-gray-600 dark:text-gray-300 transition-colors duration-300">
                     My path in technology started with self-learning and exploring various programming 
                     languages. I've since developed a strong foundation in software development and 
-                    continue to expand my knowledge through both academic studies and practical projects.
+                    continue to expand my knowledge through practical projects.
                   </p>
                 </div>
 
