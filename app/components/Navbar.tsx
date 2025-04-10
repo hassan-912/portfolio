@@ -1,37 +1,15 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { FaSun, FaMoon } from 'react-icons/fa'
+import { useTheme } from '../context/ThemeContext'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const [darkMode, setDarkMode] = useState(false)
+  const { theme, toggleTheme } = useTheme()
   const pathname = usePathname()
-
-  useEffect(() => {
-    // Check for saved theme preference or use system preference
-    const savedTheme = localStorage.getItem('theme')
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-    
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
-      setDarkMode(true)
-      document.documentElement.classList.add('dark')
-    }
-  }, [])
-
-  const toggleDarkMode = () => {
-    const newDarkMode = !darkMode
-    setDarkMode(newDarkMode)
-    if (newDarkMode) {
-      document.documentElement.classList.add('dark')
-      localStorage.setItem('theme', 'dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-      localStorage.setItem('theme', 'light')
-    }
-  }
 
   const navItems = [
     { name: 'Home', path: '/' },
@@ -68,11 +46,11 @@ const Navbar = () => {
               </Link>
             ))}
             <button
-              onClick={toggleDarkMode}
+              onClick={toggleTheme}
               className="p-2 rounded-md text-white hover:bg-white/10 transition-colors"
               aria-label="Toggle dark mode"
             >
-              {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
+              {theme === 'dark' ? <FaSun size={20} /> : <FaMoon size={20} />}
             </button>
           </div>
 
@@ -108,11 +86,11 @@ const Navbar = () => {
               </Link>
             ))}
             <button
-              onClick={toggleDarkMode}
+              onClick={toggleTheme}
               className="w-full text-left px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white/10 transition-colors"
             >
-              {darkMode ? <FaSun size={20} className="inline mr-2" /> : <FaMoon size={20} className="inline mr-2" />}
-              {darkMode ? 'Light Mode' : 'Dark Mode'}
+              {theme === 'dark' ? <FaSun size={20} className="inline mr-2" /> : <FaMoon size={20} className="inline mr-2" />}
+              {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
             </button>
           </div>
         </div>
@@ -121,4 +99,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar 
+export default Navbar

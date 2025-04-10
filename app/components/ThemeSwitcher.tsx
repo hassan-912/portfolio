@@ -9,7 +9,7 @@ export default function ThemeSwitcher() {
     <button
       onClick={toggleTheme}
       className="fixed bottom-4 right-4 p-3 rounded-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border border-gray-200 dark:border-gray-700"
-      aria-label={`Switch to ${theme === 'light' ? 'dark' : 'dark'} mode`}
+      aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
     >
       {theme === 'light' ? (
         <svg
