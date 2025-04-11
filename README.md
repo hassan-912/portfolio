@@ -23,7 +23,6 @@ A modern, responsive portfolio website built with Next.js, TypeScript, and Tailw
 
 - **Backend:**
   - Node.js
-  - Express.js
 
 ## Getting Started
 
@@ -56,21 +55,6 @@ A modern, responsive portfolio website built with Next.js, TypeScript, and Tailw
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Deployment
-
-The frontend can be deployed on Vercel:
-
-1. Push your code to GitHub
-2. Import your repository to Vercel
-3. Configure the build settings
-4. Deploy!
-
-For the backend API, you can deploy on Railway or Render:
-
-1. Set up your Node.js backend
-2. Configure environment variables
-3. Deploy to your chosen platform
-
 ## Project Structure
 
 ```
@@ -89,13 +73,7 @@ portfolio/
 └── package.json       # Dependencies and scripts
 ```
 
-## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
