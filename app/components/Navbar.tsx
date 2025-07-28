@@ -1,15 +1,39 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { FaSun, FaMoon } from 'react-icons/fa'
-import { useTheme } from '../context/ThemeContext'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const { theme, toggleTheme } = useTheme()
   const pathname = usePathname()
+  const [isDark, setIsDark] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+    const stored = typeof window !== 'undefined' ? localStorage.getItem('theme') : null;
+    if (stored === 'dark') {
+      document.documentElement.classList.add('dark');
+      setIsDark(true);
+    } else {
+      document.documentElement.classList.remove('dark');
+      setIsDark(false);
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    if (document.documentElement.classList.contains('dark')) {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+      setIsDark(false);
+    } else {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+      setIsDark(true);
+    }
+  };
 
   const navItems = [
     { name: 'Home', path: '/' },
@@ -45,13 +69,15 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-md text-white hover:bg-white/10 transition-colors"
-              aria-label="Toggle dark mode"
-            >
-              {theme === 'dark' ? <FaSun size={20} /> : <FaMoon size={20} />}
-            </button>
+            {isMounted && (
+              <button
+                onClick={toggleTheme}
+                className="p-2 rounded-md text-white hover:bg-white/10 transition-colors ml-2"
+                aria-label="Toggle dark/light mode"
+              >
+                {isDark ? <FaSun size={20} /> : <FaMoon size={20} />}
+              </button>
+            )}
           </div>
 
           {/* Mobile Navigation Button */}
@@ -63,6 +89,15 @@ const Navbar = () => {
             >
               {isOpen ? '✕' : '☰'}
             </button>
+            {isMounted && (
+              <button
+                onClick={toggleTheme}
+                className="p-2 rounded-md text-white hover:bg-white/10 transition-colors ml-2"
+                aria-label="Toggle dark/light mode"
+              >
+                {isDark ? <FaSun size={20} /> : <FaMoon size={20} />}
+              </button>
+            )}
           </div>
         </div>
       </div>
@@ -85,13 +120,6 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
-            <button
-              onClick={toggleTheme}
-              className="w-full text-left px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white/10 transition-colors"
-            >
-              {theme === 'dark' ? <FaSun size={20} className="inline mr-2" /> : <FaMoon size={20} className="inline mr-2" />}
-              {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
-            </button>
           </div>
         </div>
       )}
